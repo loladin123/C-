@@ -11,6 +11,7 @@
 class Counted {
 public:
 	Counted();
+	Counted(const Counted&);
 	~Counted();
 	static int getNbrObj();
 private:
@@ -23,6 +24,10 @@ Counted::Counted() {
 	nbrObj++;
 }
 
+Counted::Counted(const Counted&) {
+	nbrObj++;
+}
+
 Counted::~Counted() {
 	nbrObj--;
 }
@@ -31,18 +36,20 @@ int Counted::getNbrObj() {
 	return nbrObj;
 }
 
-void f() {
+/* 2 objects are created */
+void first() {
 	Counted c;
 	Counted* pc = new Counted;
 	delete pc;
 }
 
-void g() {
+/* Two objects are created, c1 is copied into c2 (by the copy constructor which does not increment nbrObj because it is default) */
+void second() {
 	Counted c1;
 	Counted c2 = c1;
 }
-
-void h() {
+/* Two objects are created */
+void third() {
 	Counted c1;
 	Counted c2;
 	c2 = c1;
@@ -56,15 +63,15 @@ void print_nbr_objects(const string& msg) {
 }
 
 int main() {
-	print_nbr_objects("Program start, before f()");
-	f();
+	print_nbr_objects("Program start, before first()");
+	
+	first();
+	print_nbr_objects("After first(), before second()    ");
 
-	print_nbr_objects("After f(), before g()    ");
-	g();
+	second();
+	print_nbr_objects("After second(), before third()    ");
 
-	print_nbr_objects("After g(), before h()    ");
-	h();
-
-	print_nbr_objects("After h(), program end   ");
+	third();
+	print_nbr_objects("After third(), program end   ");
 }
 
