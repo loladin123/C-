@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "E3 - Bitbuffer", "E3 - Bitb
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "E3 - Crypto", "E3 - Crypto\E3 - Crypto.vcxproj", "{FAD6D111-44D8-4059-B397-AE92F8B7CD10}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "E4 - Rationaltest", "E4 - Rationaltest\E4 - Rationaltest.vcxproj", "{8CFDBCE3-F984-4D79-ABEF-C6E87AACDE0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -121,6 +123,14 @@ Global
 		{FAD6D111-44D8-4059-B397-AE92F8B7CD10}.Release|x64.Build.0 = Release|x64
 		{FAD6D111-44D8-4059-B397-AE92F8B7CD10}.Release|x86.ActiveCfg = Release|Win32
 		{FAD6D111-44D8-4059-B397-AE92F8B7CD10}.Release|x86.Build.0 = Release|Win32
+		{8CFDBCE3-F984-4D79-ABEF-C6E87AACDE0F}.Debug|x64.ActiveCfg = Debug|x64
+		{8CFDBCE3-F984-4D79-ABEF-C6E87AACDE0F}.Debug|x64.Build.0 = Debug|x64
+		{8CFDBCE3-F984-4D79-ABEF-C6E87AACDE0F}.Debug|x86.ActiveCfg = Debug|Win32
+		{8CFDBCE3-F984-4D79-ABEF-C6E87AACDE0F}.Debug|x86.Build.0 = Debug|Win32
+		{8CFDBCE3-F984-4D79-ABEF-C6E87AACDE0F}.Release|x64.ActiveCfg = Release|x64
+		{8CFDBCE3-F984-4D79-ABEF-C6E87AACDE0F}.Release|x64.Build.0 = Release|x64
+		{8CFDBCE3-F984-4D79-ABEF-C6E87AACDE0F}.Release|x86.ActiveCfg = Release|Win32
+		{8CFDBCE3-F984-4D79-ABEF-C6E87AACDE0F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
