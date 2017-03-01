@@ -11,6 +11,7 @@ int main()
 	Rational a(50, 75); // numerator / denominator
 	Rational b(3);      // numerator / 1
 	Rational c;         // 0 / 1
+	/* hh */
 
 	cout << a << "\t(2/3)" << endl;
 	cout << b << "\t(3)" << endl;
