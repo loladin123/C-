@@ -3,6 +3,7 @@ class Rational
 {
 public:
 	Rational();
+	/*/*/
 	~Rational();
 };
 
