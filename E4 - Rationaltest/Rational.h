@@ -8,7 +8,7 @@ public:
 	friend ostream& operator<<(ostream &os, Rational& r);
 	~Rational();
 private:
-	/* making a remote change*/
+	
 	int nominator, denominator;
 	int gcd(int n, int d);
 };
