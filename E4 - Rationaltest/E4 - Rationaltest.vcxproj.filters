@@ -32,10 +32,10 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="E4 - Rationaltest.cpp">
+    <ClCompile Include="Rational.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Rational.cpp">
+    <ClCompile Include="Rationaltest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
