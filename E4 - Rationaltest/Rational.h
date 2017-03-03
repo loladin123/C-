@@ -23,13 +23,6 @@ private:
 /* the reason we don't define ostream operator is because it "comes from a different library"
 and it causes some weird shit */
 inline ostream& operator<<(ostream &os, Rational &r) {
-	int gcd = r.gcd(r.nominator, r.denominator);
-	if (r.denominator == 1)
-		return os << r.nominator/1;
-	if (gcd == 1)
-		return os << r.nominator << '/' << r.denominator;
-	else {
-		return os << (r.nominator / gcd) << '/' << (r.denominator / gcd);
-	}
+
 }
 
