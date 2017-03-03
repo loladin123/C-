@@ -13,10 +13,12 @@ public:
 	~Rational();
 	int getN() { return nominator;  }
 	int getD() { return denominator; }
+	void fix(int &n, int &d);
+	int gcd(int n, int d);
 private:
 
 	int nominator, denominator;
-	int gcd(int n, int d);
+	
 };
 /* the reason we don't define ostream operator is because it "comes from a different library"
 and it causes some weird shit */

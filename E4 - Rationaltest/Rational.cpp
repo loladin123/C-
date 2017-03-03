@@ -6,6 +6,14 @@ int Rational::gcd(int n, int d) {
 	return d == 0 ? n : gcd(d, n % d);
 }
 
+void Rational::fix(int &n, int &d) {
+	int gcd1 = gcd(n, d);
+	if (d == 1)
+		n = n / 1;
+	if (gcd1 != 1)
+		n = (n / gcd1), d = (d / gcd1);
+
+}
 
 Rational& Rational::operator=(const int a) {
 	nominator = a;
