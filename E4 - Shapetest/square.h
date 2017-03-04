@@ -1,8 +1,12 @@
+/*
+* 
+* 
+*/
+
 #ifndef SQUARE_H
 #define SQUARE_H
 
 #include "shape.h"
-
 #include <iostream>
 
 class Square : public Shape {

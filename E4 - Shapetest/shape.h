@@ -8,6 +8,7 @@
 
 #include <iostream>
 
+
 class Shape {
 public:
 	void print() const {
