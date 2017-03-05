@@ -11,7 +11,7 @@
 
 class Circle : public Shape {
 public:
-	virtual void print() const {
+	void print() const {
 		std::cout << "I'm a Circle" << std::endl;
 	}
 };

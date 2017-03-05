@@ -11,7 +11,7 @@
 
 class Shape {
 public:
-	void print() const {
+	virtual void print() const {
 		std::cout << "I'm a Shape" << std::endl;
 	}
 };
