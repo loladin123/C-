@@ -15,15 +15,15 @@ using namespace std;
 
 int main()
 {
-	/*
-	* A vector of Shape objects
-	*/
+	///*
+	//* A vector of Shape objects
+	//*/
 	vector<Shape*> shapes;
 	const size_t NBR_SHAPES = 10;
 
-	/*
-	* Store 10 squares and circles in the vector.
-	*/
+	///*
+	//* Store 10 squares and circles in the vector.
+	//*/
 	default_random_engine re(time(0));
 	bernoulli_distribution bd;
 	for (int i = 0; i != NBR_SHAPES; ++i) {
@@ -35,9 +35,9 @@ int main()
 		}
 	}
 
-	/*
-	* Print the shapes.
-	*/
+	///*
+	//* Print the shapes.
+	//*/
 	for (const auto& s : shapes) {
 		s->print();
 	}

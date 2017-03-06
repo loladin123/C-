@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "E4 - Shapetest", "E4 - Shap
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "E4 - Shapevectortest", "E4 - Shapevectortest\E4 - Shapevectortest.vcxproj", "{FD6DFD6D-ABDE-4832-9336-9D843CB809ED}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "E5 - Texttest", "E5 - Texttest\E5 - Texttest.vcxproj", "{A694A997-3A81-46F1-85E9-F60BCA1F8126}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -151,6 +153,14 @@ Global
 		{FD6DFD6D-ABDE-4832-9336-9D843CB809ED}.Release|x64.Build.0 = Release|x64
 		{FD6DFD6D-ABDE-4832-9336-9D843CB809ED}.Release|x86.ActiveCfg = Release|Win32
 		{FD6DFD6D-ABDE-4832-9336-9D843CB809ED}.Release|x86.Build.0 = Release|Win32
+		{A694A997-3A81-46F1-85E9-F60BCA1F8126}.Debug|x64.ActiveCfg = Debug|x64
+		{A694A997-3A81-46F1-85E9-F60BCA1F8126}.Debug|x64.Build.0 = Debug|x64
+		{A694A997-3A81-46F1-85E9-F60BCA1F8126}.Debug|x86.ActiveCfg = Debug|Win32
+		{A694A997-3A81-46F1-85E9-F60BCA1F8126}.Debug|x86.Build.0 = Debug|Win32
+		{A694A997-3A81-46F1-85E9-F60BCA1F8126}.Release|x64.ActiveCfg = Release|x64
+		{A694A997-3A81-46F1-85E9-F60BCA1F8126}.Release|x64.Build.0 = Release|x64
+		{A694A997-3A81-46F1-85E9-F60BCA1F8126}.Release|x86.ActiveCfg = Release|Win32
+		{A694A997-3A81-46F1-85E9-F60BCA1F8126}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
