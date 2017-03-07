@@ -35,7 +35,7 @@ bool List::exists(int d) const {
 void List::print() const {
 	Node* firstCopy = first;
 	while (firstCopy != NULL) {
-		cout << firstCopy->value << endl;
+		cout << firstCopy->value << " ";
 		firstCopy = firstCopy->next;
 	}	
 	delete firstCopy;
@@ -51,70 +51,108 @@ bool List::empty() const {
 
 void List::add(int d) {
 	if (size() == 0)
-		first = new Node(d, NULL), sz++;
+		first = new Node(d, NULL);
 	else {
 		Node* newnode = first;
 		first = new Node(d, newnode);
-		sz++;
 	}
+	sz++;
 }
 
 void List::remove(int d, DeleteFlag df) {
 	Node *previous = nullptr;
 	Node *current = first;
-	int firstval = first->value;
-	while(current != NULL){
-		/* works outside of while but with first instead of current*/
-		if (d == firstval) {
-			Node *tobedeleted = current;
-			current = current->next;
-			delete tobedeleted;
-			break;
+	int firstVal;
+	
+	switch (df) {
+	case List::DeleteFlag::LESS:
+		/* Unsure of how to delete last node*/
+		while (current != NULL) {
+			firstVal = first->value;
+			/* Why can I not use current here? */
+			if (firstVal == d) {
+				Node *tobedeleted = first;
+				first = first->next;
+				delete tobedeleted;
+				sz--;
+				break;
+			}
+			else {
+				/* Why can I not use first here? */
+				if (current->value < d) {
+					previous->next = current->next;
+					delete current;
+					current = previous;
+					sz--;
+				}
+				else {
+					previous = current;
+					if (current->next == NULL) {
+						sz--;
+						break;
+					}
+						current = current->next;
+				}
+			}
 		}
-		if (current->value == 10) {
-			previous->next = current->next; 
-			delete current;					
-			current = previous;
-			sz--;
+		break;
+	case List::DeleteFlag::EQUAL:
+		if (exists(d)) {
+			firstVal = first->value;
+			while (current != NULL) {
+				/* Why can I not use current here? */
+				if (firstVal == d) {
+					Node *tobedeleted = first;
+					first = first->next;
+					delete tobedeleted;
+					sz--;
+					break;
+				}
+				else {
+					/* Why can I not use first here? */
+					if (current->value != d) {
+						previous = current;
+						current = current->next;
+					}
+					else {
+						previous->next = current->next;
+						delete current;
+						current = previous;
+						sz--;
+					}
+				}
+			}
 		}
-		else {
-			previous = current;
-			current = current->next;
+		break;
+	case List::DeleteFlag::GREATER:
+		while (current != NULL) {
+			/* Why can I not use current here? */
+			firstVal = first->value;
+			if (firstVal == d) {
+				Node *tobedeleted = first;
+				first = first->next;
+				delete tobedeleted;
+				sz--;
+				break;
+			}
+			else {
+				/* Why can I not use first here? */
+				if (current->value > d) {
+					previous->next = current->next;
+					delete current;
+					current = previous;
+					sz--;
+				}
+				else {
+					previous = current;
+					current = current->next;
+				}
+			}
 		}
+		break;
 	}
-
-
-
-	//switch (df) {
-	//case List::DeleteFlag::LESS:
-	//	break;
-	//case List::DeleteFlag::EQUAL:
-	//	if (exists(d)) {
-	//		while (first != NULL) {
-	//			if (first->value == d)
-	//				delete first;
-	//			else
-	//				first = first->next;
-	//		}
-	//	}
-	//	break;
-	//case List::DeleteFlag::GREATER:
-	//	if (exists(d)) {
-	//		while (first != NULL) {
-	//			if (first->value >= d)
-	//				delete first;
-	//			else
-	//				first = first->next;
-	//		}
-	//	}
-	//	break;
-	//}
-
-
 }
 
 	
-	
-
 
 

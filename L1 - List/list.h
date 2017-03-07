@@ -36,11 +36,14 @@ public:
 	/* returns true if d is in the list */
 	bool exists(int d) const;
 
+	int ret();
+
 	/* forbid copying of lists */
 	List(const List&) = delete;
 	List& operator=(const List&) = delete;
 private:
 	int sz = 0;
+
 	
 	/* a list node */
 struct Node {

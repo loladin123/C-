@@ -22,8 +22,8 @@ int main() {
 
 
 	List list;
-
-
+	
+	
 
 
 	cout << boolalpha;
@@ -44,17 +44,17 @@ int main() {
 	cout << "7 exists:  " << list.exists(7) << endl;
 
 	list.remove(0, List::DeleteFlag::EQUAL);
-	cout << "After remove = 5: " << endl;
+	cout << "After remove = 5: ";
 	list.print();
 	cout << endl;
-	/*list.remove(5, List::DeleteFlag::GREATER);
-	cout << "After remove > 5: " << endl;
+	list.remove(5, List::DeleteFlag::GREATER);
+	cout << "After remove > 5: ";
 	list.print();
-	cout << endl;*/
-	//list.remove(5, List::DeleteFlag::LESS);
-	//cout << "After remove < 5: ";
-	//list.print();
-	//cout << endl;
+	cout << endl;
+	list.remove(5, List::DeleteFlag::LESS);
+	cout << "After remove < 5: ";
+	list.print();
+	cout << endl;
 
 	//cout << "Is empty: " << list.empty() << endl;
 }
