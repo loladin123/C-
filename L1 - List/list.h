@@ -11,9 +11,7 @@ public:
 	
 	/* destroys this list */
 	~List();
-	
-	
-	
+
 	/* returns the size of the list */
 	int size() const;
 	
@@ -21,7 +19,7 @@ public:
 	bool empty() const;
 	
 	/* inserts d into this list as the first element */
-	void add(int d);
+	void insertFirst(int d);
 	
 	/* removes the first element less than/equal to/greater than d,
 	 depending on the value of df. Does nothing if there is no value
@@ -36,15 +34,12 @@ public:
 	/* returns true if d is in the list */
 	bool exists(int d) const;
 
-	int ret();
-
 	/* forbid copying of lists */
 	List(const List&) = delete;
 	List& operator=(const List&) = delete;
 private:
 	int sz = 0;
 
-	
 	/* a list node */
 struct Node {
 		int value;  // the node value

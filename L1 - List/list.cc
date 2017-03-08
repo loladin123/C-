@@ -49,7 +49,7 @@ bool List::empty() const {
 	return sz == 0;
 }
 
-void List::add(int d) {
+void List::insertFirst(int d) {
 	if (size() == 0)
 		first = new Node(d, NULL);
 	else {
@@ -61,83 +61,45 @@ void List::add(int d) {
 
 void List::remove(int d, DeleteFlag df) {
 	Node *previous = nullptr;
+	/* This node was the issue, I was never updating current so it used the old list */
 	Node *current = first;
 	int firstVal;
-	
 	switch (df) {
 	case List::DeleteFlag::LESS:
-		/* Unsure of how to delete last node*/
 		while (current != NULL) {
 			firstVal = first->value;
-			/* Why can I not use current here? */
-			if (firstVal == d) {
+			if (firstVal < d) {
 				Node *tobedeleted = first;
 				first = first->next;
 				delete tobedeleted;
 				sz--;
-				break;
+				current = first;
+			}
+			else if (current->value < d) {
+				previous->next = current->next;
+				delete current;
+				current = previous;
+				sz--;
 			}
 			else {
-				/* Why can I not use first here? */
-				if (current->value < d) {
-					previous->next = current->next;
-					delete current;
-					current = previous;
-					sz--;
-				}
-				else {
-					previous = current;
-					if (current->next == NULL) {
-						sz--;
-						break;
-					}
-						current = current->next;
-				}
+				previous = current;
+				if (current->next == NULL) break;
+				current = current->next;
 			}
 		}
 		break;
 	case List::DeleteFlag::EQUAL:
 		if (exists(d)) {
-			firstVal = first->value;
 			while (current != NULL) {
-				/* Why can I not use current here? */
+				firstVal = first->value;
 				if (firstVal == d) {
 					Node *tobedeleted = first;
 					first = first->next;
 					delete tobedeleted;
 					sz--;
-					break;
+					current = first;
 				}
-				else {
-					/* Why can I not use first here? */
-					if (current->value != d) {
-						previous = current;
-						current = current->next;
-					}
-					else {
-						previous->next = current->next;
-						delete current;
-						current = previous;
-						sz--;
-					}
-				}
-			}
-		}
-		break;
-	case List::DeleteFlag::GREATER:
-		while (current != NULL) {
-			/* Why can I not use current here? */
-			firstVal = first->value;
-			if (firstVal == d) {
-				Node *tobedeleted = first;
-				first = first->next;
-				delete tobedeleted;
-				sz--;
-				break;
-			}
-			else {
-				/* Why can I not use first here? */
-				if (current->value > d) {
+				else if (current->value == d) {
 					previous->next = current->next;
 					delete current;
 					current = previous;
@@ -145,8 +107,33 @@ void List::remove(int d, DeleteFlag df) {
 				}
 				else {
 					previous = current;
+					if (current->next == NULL) break;
 					current = current->next;
 				}
+			}
+			break;
+		}
+		break;
+	case List::DeleteFlag::GREATER:
+		while (current != NULL) {
+			firstVal = first->value;
+			if (firstVal > d) {
+				Node *tobedeleted = first;
+				first = first->next;
+				delete tobedeleted;
+				sz--;
+				current = first;
+			}
+			else if (current->value > d) {
+				previous->next = current->next;
+				delete current;
+				current = previous;
+				sz--;
+			}
+			else {
+				previous = current;
+				if (current->next == NULL) break;
+				current = current->next;
 			}
 		}
 		break;
